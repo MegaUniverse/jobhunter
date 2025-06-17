@@ -1,11 +1,14 @@
 from flask import Flask, request, jsonify, send_from_directory
-import requests
 import os
-
-app = Flask(__name__, static_folder="static")
+import requests
 
 ADZUNA_APP_ID = "9448da63"
 ADZUNA_APP_KEY = "7d4c3218999d914e87781ea7529bb1b3"
+
+app = Flask(__name__, static_folder="static")
+
+
+
 
 @app.route("/")
 def serve_index():

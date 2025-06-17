@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify, send_from_directory
 import requests
+import os
 
 app = Flask(__name__, static_folder="static")
 
@@ -36,6 +37,8 @@ def get_jobs():
 
     except Exception as e:
         return jsonify({"error": str(e)})
+import os
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0", port=port)
